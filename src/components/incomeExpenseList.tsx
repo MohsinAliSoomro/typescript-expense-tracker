@@ -6,13 +6,13 @@ const IncomeExpensesList = () => {
     const { state } = useContext(GlobalContext)
     return (
         <div className="in-ex-list">
+            <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Button with data-target
+            </button>
             <ul>
                 {state.transactions.map((item: ITrans) => {
                     return (
-                        item.text.length < -1 ?
-                            <div>Add something in transaction</div>
-                            :
-                            <Transaction trans={item} />
+                        <Transaction trans={item} />
                     )
                 }
                 )}

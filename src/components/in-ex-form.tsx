@@ -23,9 +23,10 @@ const InExForm = () => {
         }
         if (newTransaction.text.length <= 0) {
             setBothinput('Please fill the inputs')
-            if (newTransaction.amount === 0) {
-                setMsg("Set the amount greater then 0")
-            }
+        }
+        else if (newTransaction.amount === 0) {
+            setMsg("Amount must be greater then 0 or less then 0")
+            setBothinput('');
         }
         else {
             addTransaction(newTransaction)
