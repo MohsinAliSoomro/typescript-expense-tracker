@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 function App() {
   return (
     <GlobalProvider>
-      <div className="container">
+      <div className="container-main">
         <Head />
         <Blnc />
         <IncomeExpenses />
