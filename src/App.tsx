@@ -12,21 +12,24 @@ import { Row, Col } from 'antd';
 function App() {
   return (
     <GlobalProvider>
-      <div>
-        <Row>
-          <Col span={8}></Col>
-          <Col span={8}>
-            <Head />
-            <Blnc />
-            <IncomeExpenses />
-            <p>History</p>
-            <hr />
-            <IncomeExpensesList />
-            <InExForm />
-          </Col>
-          <Col span={8}></Col>
-        </Row>
-
+      <div className="main-container">
+        <div className="row">
+          <div className="col-md-4"></div>
+          <div className="col-md-4">
+            <Row>
+              <Col span={24}>
+                <Head />
+                <Blnc />
+                <IncomeExpenses />
+                <p>History</p>
+                <hr />
+                <IncomeExpensesList />
+                <InExForm />
+              </Col>
+            </Row>
+          </div>
+          <div className="col-md-4"></div>
+        </div>
       </div>
     </GlobalProvider>
   );
