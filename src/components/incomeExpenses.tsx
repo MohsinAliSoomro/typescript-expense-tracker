@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { ITrans } from '../transType/tranType'
 import { GlobalContext } from '../globalState/globalProvider'
 import CountUp from 'react-countup';
+import { Row, Col } from 'antd';
 import { Typography } from 'antd';
-const {Title} =Typography;
+const { Title } = Typography;
 const IncomeExpenses = () => {
     const { state } = useContext(GlobalContext)
     const amount = state.transactions.map((trans: ITrans) => trans.amount);
@@ -11,11 +12,15 @@ const IncomeExpenses = () => {
     const expenses: number = parseInt(
         (amount.filter((item: number) => item < 0).reduce((acc: number, item: number) => (acc += item), 0) * -1).toFixed(2));
     return (
-            <div className="income-expenses">
-                <Title level={3} className="plus">Income <br /> $<CountUp end={income} /> </Title>
-                <div className="divider"></div>
-                <Title level={3} className="minus">Expenses <br /> $<CountUp end={expenses} /> </Title>
-            </div>
+        <Row>
+            <Col span={12}>
+                <Title level={2} style={{ color: '#fff' }} >Income <br /> $<CountUp end={income} /> </Title>
+            </Col>
+            <Col span={12}>
+                <Title level={2} style={{ color: '#fff' }} >Expenses <br /> $<CountUp end={expenses} /> </Title>
+            </Col>
+
+        </Row>
     )
 }
 export default IncomeExpenses;

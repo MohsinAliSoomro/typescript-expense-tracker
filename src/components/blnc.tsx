@@ -13,7 +13,7 @@ const Header = () => {
     const totol = amount.reduce((acc: number, item: number) => (acc += item), 0).toFixed(2)
 
     return (
-        <Title className={(totol < 0 ? 'minus' : 'plus')}>Balance <br /> $<CountUp end={totol} /> </Title>
+        <Title className="text-center" style={{color:'#fff'}}>Balance <br /> $<CountUp end={totol} /> </Title>
     )
 }
 export default Header;

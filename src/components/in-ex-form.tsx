@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
-import { ITrans } from '../transType/tranType'
-import { GlobalContext } from '../globalState/globalProvider'
+import { ITrans } from '../transType/tranType';
+import { GlobalContext } from '../globalState/globalProvider';
+
 const InExForm = () => {
     const [text, setText] = useState('');
     const [amount, setAmount] = useState(0);
@@ -41,11 +42,12 @@ const InExForm = () => {
                 <div>{bothinput}</div>
                 <div>{msg}</div>
                 <form>
-                    <label className="lbl">Name</label> <br />
-                    <input type="text" required value={text} className="form-input" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setText(e.target.value)} /><br />
-                    <label className="lbl">Balance</label><br />
-                    <input type="number" required value={amount} className="form-input" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAmount(parseFloat(e.target.value))} /><br />
-                    <button onClick={onSubmit}>Save</button>
+                    <label className="text-white">Name</label> <br />
+                    <input type="text" className="form-input" required value={text} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setText(e.target.value)} /><br />
+                    <label className="text-white">Balance</label><br />
+                    {/* <InputNumber min={1} max={1000000} defaultValue={0} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAmount(parseFloat(e.target.value))} /> */}
+                    <input type="number" className="form-input" required value={amount} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAmount(parseFloat(e.target.value))} /><br />
+                    <button onClick={onSubmit} className="form-btn" >Save</button>
                 </form>
             </div>
         </>

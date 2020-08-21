@@ -12,23 +12,23 @@ import { Row, Col } from 'antd';
 function App() {
   return (
     <GlobalProvider>
-      <div className="main-container">
+      <div className="container">
         <div className="row">
-          <div className="col-md-4"></div>
-          <div className="col-md-4">
+          <div className="col-sm-12 col-md-4 col-lg-4"></div>
+          <div className="col-sm-12 col-md-4 col-lg-4 p-2 pb-5 bg-color">
             <Row>
               <Col span={24}>
                 <Head />
                 <Blnc />
                 <IncomeExpenses />
-                <p>History</p>
+                <p className="h5 text-white">History</p>
                 <hr />
                 <IncomeExpensesList />
                 <InExForm />
               </Col>
             </Row>
           </div>
-          <div className="col-md-4"></div>
+          <div className="col-sm-12 col-md-4 col-lg-4"></div>
         </div>
       </div>
     </GlobalProvider>
