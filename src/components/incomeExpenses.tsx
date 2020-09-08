@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { ITrans } from '../transType/tranType'
 import { GlobalContext } from '../globalState/globalProvider'
-import CountUp from 'react-countup';
 import { Row, Col } from 'antd';
 import { Typography } from 'antd';
 const { Title } = Typography;
@@ -14,10 +13,10 @@ const IncomeExpenses = () => {
     return (
         <Row>
             <Col span={12}>
-                <Title level={2} style={{ color: '#fff' }} >Income <br /> $<CountUp end={income} /> </Title>
+                <Title level={2} style={{ color: '#fff' }} >Income <br /> ${income} </Title>
             </Col>
             <Col span={12}>
-                <Title level={2} style={{ color: '#fff' }} >Expenses <br /> $<CountUp end={expenses} /> </Title>
+                <Title level={2} style={{ color: '#fff' }} >Expenses <br /> ${expenses} </Title>
             </Col>
 
         </Row>

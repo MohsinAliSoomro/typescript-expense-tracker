@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { ITrans } from '../transType/tranType'
 import { GlobalContext } from '../globalState/globalProvider';
-import CountUp from 'react-countup';
 import { Typography } from 'antd';
 const { Title } = Typography;
 const Header = () => {
@@ -10,10 +9,10 @@ const Header = () => {
 
     const amount = state.transactions.map((trans: ITrans) => trans.amount);
 
-    const totol = amount.reduce((acc: number, item: number) => (acc += item), 0).toFixed(2)
+    const total: number = amount.reduce((acc: number, item: number) => (acc += item), 0).toFixed(2)
 
     return (
-        <Title className="text-center" style={{color:'#fff'}}>Balance <br /> $<CountUp end={totol} /> </Title>
+        <Title className="text-center" style={{ color: '#fff' }}>Balance <br /> ${total} </Title>
     )
 }
 export default Header;
