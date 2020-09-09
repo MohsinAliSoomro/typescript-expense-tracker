@@ -5,7 +5,6 @@ const initialState: IState = {
     transactions: []
 }
 
-
 export const GlobalContext = createContext<IState | any>(initialState)
 
 function reducer(state: IState, action: IAction): IState {
@@ -14,7 +13,7 @@ function reducer(state: IState, action: IAction): IState {
             return { ...state, transactions: [action.payload, ...state.transactions] }
 
         case 'DEL':
-            return { ...state, transactions: state.transactions.filter((transaction: ITrans) => transaction.id !== action.payload.id) }
+            return { ...state, transactions: state.transactions.filter((transaction: ITrans) => transaction.id !== action.payload) }
 
         default:
             return state;
@@ -26,8 +25,8 @@ export function GlobalProvider(props: any): JSX.Element {
     return <GlobalContext.Provider value={{ state, dispatch }}>{props.children}</GlobalContext.Provider>
 }
 
-// export const GlobalProvider:FunctionComponent = ({ children }) => {
-//     const [state, dispatch] = useReducer(Reducer, initialState)
+// export const GlobalProvider:React.FC = ({ children }) => {
+//     const [state, dispatch] = useReducer(reducer, initialState)
 //     function addTransaction(transaction:transactionType) {
 //         dispatch({
 //             type:"ADD_TRANSACTION",

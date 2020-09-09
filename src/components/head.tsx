@@ -1,8 +1,6 @@
-import React from 'react';
-import { Typography } from 'antd';
-const { Title } = Typography;
+import React from "react";
 
-const Head =()=>(
-    <Title level={1} className="text-align-center text-white">Expense Tracker</Title>
-)
+const Head = () => (
+  <h2 className="text-align-center text-white">Expense Tracker</h2>
+);
 export default Head;
